@@ -179,11 +179,6 @@ abstract class WP_Post_Entity implements WP_Entity_Contract {
 		$model   = (new static)->set_datastore();
 		$wp_post = $model->datastore->find( $the_post );
 
-		echo '<pre>';
-		echo 'LINE: ' . __LINE__ . '<br/>';
-		var_dump($model);
-		exit;
-
 		if ( ! $wp_post || $wp_post->post_type !== static::POST_TYPE ) {
 			return null;
 		}
